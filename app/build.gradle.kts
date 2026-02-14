@@ -35,8 +35,21 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     
+    // WorkManager
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
+    // ONNX Runtime
+    implementation("com.microsoft.onnxruntime:onnxruntime-android:1.17.0")
+
     // FFmpeg removed. Using native AudioStitcher.
+
 
 
 
