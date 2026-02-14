@@ -35,6 +35,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+        jniLibs {
+            useLegacyPackaging = true
+            pickFirsts.add("lib/**/libc++_shared.so")
+        }
+    }
 }
 
 dependencies {
@@ -53,8 +63,8 @@ dependencies {
     // Removed broken dependency. Using internal Phonemizer workaround for now.
     // implementation("com.github.crushing-tides:libespeak-ng-android:master-SNAPSHOT")
     
-    // FFmpeg Kit (Full GPL version which is more reliably hosted)
-    implementation("com.arthenica:ffmpeg-kit-full-gpl:6.0-2")
+    // FFmpeg Kit (Standard LGPL version, 6.0-2 is latest on Central)
+    implementation("com.arthenica:ffmpeg-kit-full:6.0-2")
 
 
     testImplementation("junit:junit:4.13.2")
