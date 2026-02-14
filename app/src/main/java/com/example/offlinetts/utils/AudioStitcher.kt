@@ -1,6 +1,4 @@
-package com.example.offlinetts.utils
-
-import com.arthenica.mobileffmpeg.FFmpeg
+import com.arthenica.ffmpegkit.FFmpegKit
 import java.io.File
 
 object AudioStitcher {
@@ -30,11 +28,12 @@ object AudioStitcher {
         
         val cmd = "-f concat -safe 0 -i \"${listFile.absolutePath}\" -c:a libmp3lame -q:a 2 \"${outputFile.absolutePath}\""
         
-        val rc = FFmpeg.execute(cmd)
+        val session = FFmpegKit.execute(cmd)
+        val rc = session.returnCode
         
         // Clean up list file
         listFile.delete()
         
-        return rc == 0 // 0 means success
+        return rc.isValueSuccess // true if success
     }
 }

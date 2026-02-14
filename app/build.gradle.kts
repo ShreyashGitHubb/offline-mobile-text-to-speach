@@ -49,17 +49,13 @@ dependencies {
     // ONNX Runtime
     implementation("com.microsoft.onnxruntime:onnxruntime-android:1.17.0")
 
-    // Espeak-ng (User recommended)
-    // Note: Assuming this is available on JitPack or similar. 
-    // If not found, we might need a local aar or a different fork.
-    implementation("com.github.crushing-tides:libespeak-ng-android:master-SNAPSHOT")
-    // Fallback/Alternative if the above fails: use a known working fork or build
+    // Espeak-ng check
+    // Removed broken dependency. Using internal Phonemizer workaround for now.
+    // implementation("com.github.crushing-tides:libespeak-ng-android:master-SNAPSHOT")
     
-    // FFmpeg
-    // Using mobile-ffmpeg-audio as requested. 
-    // Note: This library is old (replaced by ffmpeg-kit), but matches the user's specific "Holy Grail" list.
-    implementation("com.arthenica:mobile-ffmpeg-audio:4.4") 
-    // Alternatively: implementation("com.arthenica:ffmpeg-kit-audio:6.0")
+    // FFmpeg Kit (Newer version of mobile-ffmpeg)
+    implementation("com.arthenica:ffmpeg-kit-audio:6.0")
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
