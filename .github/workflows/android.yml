@@ -23,6 +23,13 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
+    - name: Download Model Assets
+      run: |
+        mkdir -p app/src/main/assets
+        curl -L -o app/src/main/assets/kokoro-quant.onnx https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-quant.onnx
+        curl -L -o app/src/main/assets/voices.json https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/voices.json
+        curl -L -o app/src/main/assets/config.json https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/config.json
+
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 
