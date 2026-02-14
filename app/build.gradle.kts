@@ -53,8 +53,8 @@ dependencies {
     // Removed broken dependency. Using internal Phonemizer workaround for now.
     // implementation("com.github.crushing-tides:libespeak-ng-android:master-SNAPSHOT")
     
-    // FFmpeg Kit (Newer version of mobile-ffmpeg)
-    implementation("com.arthenica:ffmpeg-kit-audio:6.0")
+    // FFmpeg Kit (Full GPL version which is more reliably hosted)
+    implementation("com.arthenica:ffmpeg-kit-full-gpl:6.0-2")
 
 
     testImplementation("junit:junit:4.13.2")
