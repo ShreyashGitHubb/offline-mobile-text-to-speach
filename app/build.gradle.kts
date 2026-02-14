@@ -63,8 +63,8 @@ dependencies {
     // Removed broken dependency. Using internal Phonemizer workaround for now.
     // implementation("com.github.crushing-tides:libespeak-ng-android:master-SNAPSHOT")
     
-    // FFmpeg Kit (Standard LGPL version, 6.0 is often more reliable on Central)
-    implementation("com.arthenica:ffmpeg-kit-full:6.0")
+    // FFmpeg Kit (LTS version, often more stable availability)
+    implementation("com.arthenica:ffmpeg-kit-full:6.0-2.LTS")
 
 
     testImplementation("junit:junit:4.13.2")
