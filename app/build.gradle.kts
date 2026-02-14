@@ -36,35 +36,8 @@ android {
         viewBinding = true
     }
     
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-        jniLibs {
-            useLegacyPackaging = true
-            pickFirsts.add("lib/**/libc++_shared.so")
-        }
-    }
-}
+    // FFmpeg removed. Using native AudioStitcher.
 
-dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    
-    // WorkManager
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-
-    // ONNX Runtime
-    implementation("com.microsoft.onnxruntime:onnxruntime-android:1.17.0")
-
-    // Espeak-ng check
-    // Removed broken dependency. Using internal Phonemizer workaround for now.
-    // implementation("com.github.crushing-tides:libespeak-ng-android:master-SNAPSHOT")
-    
-    // FFmpeg Kit (Stable 5.1 version - verified fallback)
-    implementation("com.arthenica:ffmpeg-kit-full:5.1")
 
 
     testImplementation("junit:junit:4.13.2")

@@ -63,7 +63,7 @@ class RenderingWorker(context: Context, params: WorkerParameters) : Worker(conte
             setProgressAsync(workDataOf("PROGRESS" to 95, "STATUS" to "Stitching audio..."))
             
             val outputDir = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_MUSIC)
-            val finalFile = File(outputDir, "OfflineTTS_${System.currentTimeMillis()}.mp3")
+            val finalFile = File(outputDir, "OfflineTTS_${System.currentTimeMillis()}.wav")
             
             val success = AudioStitcher.mergeAudioFiles(tempFiles, finalFile)
             
